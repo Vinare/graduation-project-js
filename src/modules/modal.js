@@ -1,4 +1,6 @@
-import { animate } from "./helpers.js";
+import {
+    animate
+} from "./helpers.js";
 
 export const modal = () => {
     const arrow = document.querySelector(".up");
@@ -13,7 +15,7 @@ export const modal = () => {
 
     const cleanData = () => {
         formElements.forEach((input) => {
-            if (input.name == "tel" || input.name == "fio") {
+            if (input.name === "tel" || input.name === "fio") {
                 input.value = "";
             }
         });
@@ -45,7 +47,7 @@ export const modal = () => {
             e.preventDefault();
             if (e.target.matches(".services-carousel .img-wrapper") || e.target.matches(".callback-btn") || e.target.classList.contains("button-services")) {
                 visibleModalWindow();
-                if (arrow.style.display = "block") {
+                if (arrow.style.display === "block") {
                     arrow.style.display = "none";
                 }
             }
@@ -63,7 +65,7 @@ export const modal = () => {
             if (window.pageYOffset > 520) {
                 arrow.style.display = "block";
             }
-            
+
             cleanData();
         });
     };
