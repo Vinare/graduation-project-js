@@ -3,9 +3,10 @@ import Swiper, {
 } from 'swiper';
 
 export const carousel = () => {
-    const carouselWrapper = document.querySelectorAll('.swiper-slide > .element');
+    const carouselItems = document.querySelectorAll('.swiper-slide > .element');
+    const carouselWrapper = document.querySelector('.services-carousel');
 
-    carouselWrapper.forEach((slide) => {
+    carouselItems.forEach((slide) => {
         slide.style.cursor = "pointer";
     })
 
