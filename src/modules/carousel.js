@@ -1,7 +1,13 @@
-import Swiper, { Navigation } from 'swiper';
+import Swiper, {
+    Navigation
+} from 'swiper';
 
 export const carousel = () => {
-    const carouselWrapper = document.querySelector('.services-carousel')
+    const carouselWrapper = document.querySelectorAll('.swiper-slide > .element');
+
+    carouselWrapper.forEach((slide) => {
+        slide.style.cursor = "pointer";
+    })
 
     carouselWrapper.style.margin = '0 auto'
 
