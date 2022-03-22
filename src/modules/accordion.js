@@ -3,9 +3,6 @@ export const accordion = () => {
   const elements = accordion.querySelectorAll(".element");
   const elementsContent = accordion.querySelectorAll(".element-content");
 
-  elementsContent[0].style.display = "none";
-  elements[0].classList.remove("active");
-
   const removeClassActive = (elems) => {
     elems.forEach((elem) => {
       elem.classList.remove("active");

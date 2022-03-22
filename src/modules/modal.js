@@ -35,6 +35,7 @@ export const modal = () => {
 
         modal.style.display = 'block';
         modalOverlay.style.display = 'block';
+        document.body.style.overflow = 'hidden';
     };
 
     const unvisibleModalWindow = () => {
