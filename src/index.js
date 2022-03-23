@@ -5,7 +5,7 @@ import { menu } from './modules/menu.js'
 import { slider } from './modules/slider.js'
 import { smoothScroll } from './modules/smoothScroll.js'
 import { sendForm } from './modules/sendForm.js'
-import { validationForm } from './modules/validationForm.js'
+import { validations } from './modules/validations.js'
 import { numbers } from './modules/numbers.js'
 
 accordion()
@@ -16,4 +16,4 @@ numbers()
 slider()
 smoothScroll()
 sendForm()
-validationForm()
+validations()

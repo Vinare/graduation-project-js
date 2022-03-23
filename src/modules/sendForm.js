@@ -1,5 +1,3 @@
-import { validationForm } from './validationForm.js'
-
 export const sendForm = () => {
   const arrow = document.querySelector('.up')
   const modal = document.querySelector('.modal-callback')
@@ -7,8 +5,9 @@ export const sendForm = () => {
   const form = document.querySelector('form')
   const statusBlock = document.createElement('div')
   const loadText = 'Идёт отправка...'
-  const successText = 'Отправлено!'
+  const successText = 'Спасибо!Наш менеджер с вами свяжется.'
   const errorText = 'Ошибка'
+
   const formElements = form.querySelectorAll('input')
 
   const sendData = (data) => {
@@ -38,32 +37,25 @@ export const sendForm = () => {
 
     formData.forEach((value, key) => {
       formBody[key] = value
-      if (value === '') {
-        delete formBody.fio
-      }
     })
-    if (validationForm()) {
-      sendData(formBody)
-        .then(() => {
-          statusBlock.textContent = successText
-          setTimeout(() => {
-            modal.style.display = 'none'
-            modalOverlay.style.display = 'none'
-            statusBlock.textContent = ''
-            document.body.style.overflow = ''
-            if (window.pageYOffset > 520) {
-              arrow.style.display = 'block'
-            }
-          }, 3000)
-          cleanData()
-        })
-        .catch(() => {
-          statusBlock.textContent = errorText
-        })
-    } else {
-      alert('Данные не валидны!')
-      statusBlock.textContent = ''
-    }
+    
+    sendData(formBody)
+    .then(() => {
+      statusBlock.textContent = successText
+      setTimeout(() => {
+        modal.style.display = 'none'
+        modalOverlay.style.display = 'none'
+        statusBlock.textContent = ''
+        document.body.style.overflow = ''
+        if (window.pageYOffset > 520) {
+          arrow.style.display = 'block'
+        }
+      }, 3000)
+      cleanData()
+    })
+    .catch(() => {
+      statusBlock.textContent = errorText
+    })
   }
 
   const requiredPhone = () => {
